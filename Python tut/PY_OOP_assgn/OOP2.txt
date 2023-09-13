@@ -1,0 +1,30 @@
+
+Create a class Employee with two objects . The class has two instance variables viz. name and birthyear. Create a method age which prints the current age of the Employee. 
+Tip: Make use of datetime module to calculate the current year. 
+
+
+import datetime
+from datetime import date
+class Employee:
+    def __init__ (self,first,last,pay,dob):
+        self.first = first
+        self.last = last
+        self.pay = pay
+        self.email = first + "." + last + "@company.com"
+        self.dob = dob
+    
+    def fullname(self):
+        return '{} {}'.format(self.first,self.last)
+    
+    def age(dob):
+        today = date.today()
+        dob = dob.dob 
+        return today.year - dob.year - ((today.month, today.day) < (dob.month, dob.day))
+         
+    
+emp1 = Employee("aa","ss",122,date(1991,2,3))
+emp2 = Employee("ww","ii",637,date(1997,8,24))
+emp3 = Employee("ee","oo",986,date(1986,10,19))
+
+#driver code
+print(Employee.age(emp2))

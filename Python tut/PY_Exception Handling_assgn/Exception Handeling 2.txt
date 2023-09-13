@@ -1,0 +1,8 @@
+WAP to  multiple except in one try with proper comments and notes
+
+try:
+  print(x)
+except NameError:
+  print("Variable x is not defined")
+except:
+  print("Something else went wrong")

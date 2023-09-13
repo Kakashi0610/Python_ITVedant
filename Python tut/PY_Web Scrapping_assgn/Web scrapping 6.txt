@@ -1,0 +1,93 @@
+1. What is meant by Web Scraping?
+Ans : Web scraping is the process of using bots to extract content and data from a website. Unlike screen scraping, which only copies pixels displayed onscreen, 
+web scraping extracts underlying HTML code and, with it, data stored in a database. The scraper can then replicate entire website content elsewhere.
+
+
+2. Why we use Python for Web Scraping? 
+Ans : Instead of looking at the job site every day, you can use Python to help automate your job search's repetitive parts. Automated web scraping can be a 
+solution to speed up the data collection process. You write your code once, and it will get the information you want many times and from many pages.
+
+
+3. Define the following Modules
+i) BeautifulSoup : Beautiful Soup provides simple methods for navigating, searching, and modifying a parse tree in HTML, XML files. It transforms a complex 
+HTML document into a tree of Python objects. It also automatically converts the document to Unicode, so you don't have to think about encodings.
+
+ii) requests : The requests module allows you to send HTTP requests using Python. The HTTP request returns a Response Object with all the response data 
+(content, encoding, status, etc).
+
+iii) re : What is the re module?
+The re module provides a set of powerful regular expression facilities, which allows you to quickly check whether a given string matches a given pattern 
+(using the match function), or contains such a pattern (using the search function).
+
+
+4. Scrap the data from any one of the following sites.
+
+Sites	Category
+Amazon	    E-Commerce
+Flipkart	    E-Commerce
+Twitter	    Social Media
+Sanfoundry	    Knowledge Repository
+Times of India  News
+Wikipedia	    Knowledge Repository'
+
+Ans : 
+
+1. Create email validation pattern.
+
+Ans : /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+
+
+2. Create validation for pin code. 
+
+Ans : ^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$
+
+
+3. Scarp any  one website and write the code. (as per your choice you can do)
+
+from bs4 import BeautifulSoup
+import requests
+ 
+def main(URL):
+    File = open("out.csv", "a")
+
+    HEADERS = ({'User-Agent':
+                'Mozilla/5.0 (X11; Linux x86_64)
+                    AppleWebKit/537.36 (KHTML, like Gecko)
+                            Chrome/44.0.2403.157 Safari/537.36',
+                                'Accept-Language': 'en-US, en;q=0.5'})
+     webpage = requests.get(URL, headers=HEADERS)
+
+    soup = BeautifulSoup(webpage.content, "lxml")
+ 
+
+    try:
+        title = soup.find("span",
+                          attrs={"id": 'productTitle'})
+
+        title_value = title.string
+
+        title_string = title_value.strip().replace(',', '')
+ 
+    except AttributeError:
+        title_string = "NA"
+    print("product Title = ", title_string)
+    File.write(f"{title_string},")
+
+    try:
+        price = soup.find(
+            "span", attrs={'id': 'priceblock_ourprice'})
+                                .string.strip().replace(',', '')
+
+    except AttributeError:
+        price = "NA"
+    print("Products price = ", price)
+
+    File.write(f"{price},")
+    File.close()
+ 
+ 
+if __name__ == '__main__':
+    file = open("url.txt", "r")
+
+    for links in file.readlines():
+        main(links)

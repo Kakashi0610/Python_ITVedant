@@ -1,0 +1,31 @@
+
+1.basic.py
+
+- basic.py module contain function which perform arithmetic operation on 2 numbers.
+
+var1=10
+var2=30
+sum=var1+var2
+product = var1 * var2
+print("The sum of",var1,"and",var2,"is:",sum)
+print("The product of",var1,"and",var2,"is:",product)
+
+
+
+2.power.py
+- power.py module contains function return square of number ,cube of number and nth power of number 
+
+import math
+def square (num):
+	return  (num*num)
+
+def cube (num) :
+	return  (num*num*num) 
+
+number = int (input("Enter an integer number: "))
+power = int (input("Enter an integer number for power: "))
+
+print ("square of {0} is {1}".format(number, square(number)))
+print ("Cube of {0} is {1}".format(number, cube (number)))
+print ("The power of number is : ",math.pow(number,power))
+

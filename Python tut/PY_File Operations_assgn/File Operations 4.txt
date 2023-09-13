@@ -1,0 +1,11 @@
+Input user's full name and mobile number and then store this information by writing it to  a text file in append mode. 
+
+Display all the users with their mobile numbers at the end of the program. 
+
+
+f = open("data/info.txt", "a")
+f.write("")  # write the data here
+f.close()
+
+f = open("data/info.txt")
+print(f.read())

@@ -1,0 +1,28 @@
+Create a module named advance_math, add functions to
+
+1) calculate factorial,
+
+2) check if a number is prime or not,
+
+Import this module in another file and create a menu for user, call the function based on user's choice, with input from user.
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+n=int(input("Input a number to compute the factiorial : "))
+print(factorial(n))
+
+def prime_check(number):
+    prime = True
+    for num in range(2, number):
+        if number % num == 0:
+            prime = False
+    if prime:
+        print("It is prime")
+    else:
+        print("It is not prime")
+
+number_to_check = int(input("Type the number to check: "))
+prime_check(number = number_to_check)

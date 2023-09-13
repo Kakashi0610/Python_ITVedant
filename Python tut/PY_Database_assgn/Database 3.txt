@@ -1,0 +1,85 @@
+Create a student table with columns -  id, name and marks
+
+Create python functions to -
+
+1)show students
+
+2) update student marks with id
+
+3) Insert new student
+
+4) Delete student
+
+
+import mysql.connector
+ 
+con = mysql.connector.connect(
+    host="localhost", user="root", password="password", database="emp")
+ 
+def Add_Student():
+ 
+    Id = input("Enter Student Id : ")
+    
+    Name = input("Enter Student Name : ")
+    Marks = input("Enter Student marks: ")
+    data = (Id, Name, Marks)
+    
+    sql = 'insert into stud values(%s,%s,%s,%s)'
+    c = con.cursor()
+     
+    c.execute(sql, data)
+    con.commit()
+    print("Student Added Successfully ")
+    menu()
+
+def Display_Student():
+     
+    sql = 'select * from empd'
+    c = con.cursor()
+     
+    c.execute(sql)
+     
+    r = c.fetchall()
+    for i in r:
+        print("Student Id : ", i[0])
+        print("Student Name : ", i[1])
+        print("Student Marks : ", i[2])
+        print("---------------------\
+        -----------------------------\
+        ------------------------------\
+        ---------------------")
+         
+    menu()
+
+def Remove_Student():
+    Id = input("Enter Student Id : ")
+
+    sql = 'delete from stud where id=%s'
+    data = (Id,)
+    c = con.cursor()
+    c.execute(sql, data)
+    con.commit()
+    print("Student Removed")
+    menu()
+
+def menu():
+    print("Welcome to Student Management Record")
+    print("Press ")
+    print("1 to Add Student")
+    print("2 to Display Student")
+    print("3 to Remove Student ")
+    print("4 to Exit")
+ 
+    ch = int(input("Enter your Choice "))
+    if ch == 1:
+        Add_Student()
+    elif ch == 2:
+        Display_Student()
+    elif ch == 3:
+        Remove_Student()
+    elif ch == 4:
+        exit(0)
+    else:
+        print("Invalid Choice")
+        menu()
+menu()

@@ -1,0 +1,74 @@
+1.What is the importance of functions in python?
+ans : Functions in Python : You use functions in programming to bundle a set of instructions that you want to use repeatedly or that, 
+because of their complexity, are better self-contained in a sub-program and called when needed. That means that a function is a piece 
+of code written to carry out a specified task.
+
+
+2.What is function call and function definition?
+ans : A function is a subprogram that returns a value. The data type of the value is the data type of the function. A function invocation 
+(or call) is an expression, whose data type is that of the function. Before invoking a function, you must declare and define it.
+
+
+3.What is parameter/argument?
+ans : A parameter is the variable listed inside the parentheses in the function definition. An argument is the value that are sent to the 
+function when it is called.
+
+
+4.What is the purpose of return statement?
+ans : A return statement ends the execution of a function, and returns control to the calling function. Execution resumes in the calling 
+function at the point immediately following the call. A return statement can return a value to the calling function.
+
+
+5.Create a function to find out Cube of given number?
+ans : 
+def cube(x):
+    return x * x * x
+n = int(input(" Enter the number : "))
+cube1 = cube(n)
+print("The Cube of {0}  = {1}".format(n, cube1))
+
+
+6.Create a function to reverse a  given string?
+ans : 
+def reverse(string):
+    string = "".join(reversed(string))
+    return string
+    
+s = "SoftHunt"
+print ("The original string is : ",end="")
+print (s)
+print ("The reversed string(using reversed) is : ",end="")
+print (reverse(s))
+
+
+7.What is Anonymous function in python?
+ans : Python Lambda Functions are anonymous function 
+means that the function is without a name. As we already know that the def keyword is used to define a normal function in Python. 
+Similarly, the lambda keyword is used to define an anonymous function in Python.
+
+
+8.List out some built-in functions in python 
+ans : 
+print( ) function.
+type( ) function.
+input( ) function.
+abs( ) function.
+pow( ) function.
+dir( ) function.
+sorted( ) function.
+max( ) function.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

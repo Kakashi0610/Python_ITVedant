@@ -1,0 +1,13 @@
+Create a function that take the inputs of filename and read the file content. Handle Exception by exception handling  if file not found.
+
+try:
+  f = open("demofile.txt")
+  try:
+    f.write("Lorum Ipsum")
+  except:
+    print("Something went wrong when writing to the file")
+  finally:
+    f.close()
+else:
+  print("Something went wrong when opening the file")
+

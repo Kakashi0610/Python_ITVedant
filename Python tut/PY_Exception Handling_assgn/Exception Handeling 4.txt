@@ -1,0 +1,12 @@
+Write the program that takes the string input for the name and throws exception if number is entered?
+
+name = input("Please enter a name ")
+designation = input("Please enter a position ")
+salary = int(input("Please enter salary "))
+try:
+    print(name)
+    print(designation)
+    print(salary)
+except:
+    if salary > 10000:
+        raise Exception("Sorry,Salary should be high")

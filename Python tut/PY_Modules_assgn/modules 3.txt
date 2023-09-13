@@ -1,0 +1,14 @@
+ Use datetime module. Input date of birth of a person and output their age.
+
+
+from datetime import date
+ 
+def calculateAge(birthDate):
+    today = date.today()
+    age = today.year - birthDate.year -
+         ((today.month, today.day) <
+         (birthDate.month, birthDate.day))
+ 
+    return age
+
+print(calculateAge(date(1997, 2, 3)), "years")

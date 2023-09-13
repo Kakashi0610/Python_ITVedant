@@ -1,0 +1,58 @@
+1. WAP that  a class Professor inherited only one class Person.
+
+class Person:
+
+    name = ""
+    
+    def think(self):
+        print("I can think")
+
+class Professor(Person):
+
+    def display(self):
+        print("My name is ", self.name)
+
+professor1 = Professor()
+
+professor1.name = "John"
+professor1.think()
+
+professor1.display()
+
+
+2. WAP that a SubClass has inherited both SuperClass1 and SuperClass2.
+
+class Person(object):
+
+    def __init__(self, name):
+        self.name = name
+
+    def getName(self):
+        return self.name
+
+    def isEmployee(self):
+        return False
+
+class Employee(Person):
+
+    def isEmployee(self):
+        return True
+
+emp = Person("Geek1")
+print(emp.getName(), emp.isEmployee())
+  
+emp = Employee("Geek2")
+print(emp.getName(), emp.isEmployee())
+
+
+3. WAP that a GrandChild can access both the Parent and Child classes attributes.
+
+
+
+
+4. WAP that all three subclasses have inherited the same class.
+
+
+
+
+5. WAP that combines more than one inheritance concepts and display the results.

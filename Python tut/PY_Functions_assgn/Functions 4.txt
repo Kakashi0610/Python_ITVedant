@@ -1,0 +1,6 @@
+Write a Python function that takes a list of words and returns the length of #longest one.
+
+def get_max_length(lst):
+    return len(max(lst, key=len))
+
+print("The length of the longest string is : ",get_max_length(['Alice', 'Bob', 'Pete']))

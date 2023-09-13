@@ -1,0 +1,35 @@
+1] How to apply findall() function in regular expression? write the code for same.
+
+import re
+
+s = "black, blue and brown"
+pattern = r'bl\w+'
+matches = re.findall(pattern,s)
+
+print(matches)
+
+
+
+2] What is Web Scrapping? how to use beautifulsoup module?
+
+First, we need to import all the libraries that we are going to use. Next, declare 
+a variable for the url of the page. Then, make use of the Python urllib2 to get the 
+HTML page of the url declared. Finally, parse the page into BeautifulSoup format so we can use BeautifulSoup to work on it.
+
+
+3] write a code to generate HTML file using beautifulsoup module.
+
+from bs4 import BeautifulSoup
+import requests
+
+URL = 'https://www.geeksforgeeks.org/how-to-scrape-all-pdf-files-in-a-website/'
+page = requests.get(URL)
+  
+
+text = page.content
+  
+soup = BeautifulSoup(text, "html.parser")
+
+with open("output.html", "w", encoding = 'utf-8') as file:
+    
+    file.write(str(soup.prettify()))

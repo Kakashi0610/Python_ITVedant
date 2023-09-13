@@ -1,0 +1,89 @@
+1.What is OOP's?
+
+Object Oriented programming (OOP) is a programming 
+paradigm that relies on the concept of classes and 
+objects. It is used to structure a software program into 
+simple, reusable pieces of code blueprints (usually called 
+classes), which are used to create individual instances of objects.
+
+
+2. What are the main features/Principle's  of OOPs?
+
+The four main principles of object-oriented programming (abstraction, inheritance, encapsulation, and polymorphism)
+
+
+3. What is Class and  Object  explain with example?
+
+Python is an object oriented programming language. Almost everything in Python is an object, with its properties and 
+methods. A Class is like an object constructor, or a "blueprint" for creating objects.
+
+Example : 
+
+class Person:
+  def __init__(self, _name, _age):
+    self.name = _name
+    self.age = _age
+   
+  def sayHi(self):
+    print('Hello, my name is ' + self.name + ' and I am ' + self.age + ' years old!')
+    
+p1 = Person('Bob', 25)
+p1.sayHi() 
+
+4.What is Constructor and Destructor and its properties with example?
+
+Constructor	                                                          
+Constructors allow an object to initialize a value before it is used.	
+They are called in the successive order of their creation.	
+
+Destructor
+They allow objects to execute code when it is being destroyed.
+They are called in the reverse order of their creation.
+
+
+5. What is Inheritance and it types ?
+
+Inheritance is a feature or a process in which, new classes are created from the existing classes. The new class 
+created is called “derived class” or “child class” and the existing class is known as the “base class” or “parent class”. 
+The derived class now is said to be inherited from the base class.
+
+OOPs support the six different types of inheritance as given below :
+Single inheritance.
+Multi-level inheritance.
+Multiple inheritance.
+Hierarchical Inheritance.
+Hybrid Inheritance.
+
+
+6. Explain Method Overriding and Operator overloading with example 
+
+Method Overloading 
+Method overloading is providing two separate methods in a class 
+with the same name but different arguments, while the method return type 
+may or may not be different, which allows us to reuse the same method name.
+1) Method Overloading occurs with in the same
+class
+2) Since it involves with only one class inheritance
+is not involved.
+3)In overloading return type need not be the same 
+4) Parameters must be different when we do
+overloading
+5) Static polymorphism can be acheived using
+method overloading
+6) In overloading one method can’t hide the
+another
+
+Method Overriding
+Overriding means same method name and same parameter, 
+occur in different class that has inheritance relationship. 
+we use method overriding to implement specific functionality to the method.
+1) Method Overriding occurs between
+two classes superclass and subclass
+2) Since method overriding occurs between superclass
+and subclass inheritance is involved.
+3) In overriding return type must be same.
+4) Parameters must be same.
+5) Dynamic polymorphism can be acheived using
+method overriding.
+6) In overriding subclass method hides that of the
+superclass method

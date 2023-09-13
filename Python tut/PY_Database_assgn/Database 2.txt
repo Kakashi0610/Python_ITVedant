@@ -1,0 +1,85 @@
+import mysql.connector
+ 
+con = mysql.connector.connect(
+    host="localhost", user="root", password="password", database="emp")
+ 
+def Add_Employ():
+ 
+    Id = input("Enter Employee Id : ")
+     
+    if(check_employee(Id) == True):
+        print("Employee aready exists\nTry Again\n")
+        menu()
+         
+    else:
+        Name = input("Enter Employee Name : ")
+        Post = input("Enter Employee Post : ")
+        Salary = input("Enter Employee Salary : ")
+        data = (Id, Name, Post, Salary)
+     
+        sql = 'insert into empd values(%s,%s,%s,%s)'
+        c = con.cursor()
+         
+        c.execute(sql, data)
+        con.commit()
+        print("Employee Added Successfully ")
+        menu()
+
+def Display_Employees():
+     
+    sql = 'select * from empd'
+    c = con.cursor()
+     
+    c.execute(sql)
+     
+    r = c.fetchall()
+    for i in r:
+        print("Employee Id : ", i[0])
+        print("Employee Name : ", i[1])
+        print("Employee Post : ", i[2])
+        print("Employee Salary : ", i[3])
+        print("---------------------\
+        -----------------------------\
+        ------------------------------\
+        ---------------------")
+         
+    menu()
+
+def Remove_Employ():
+    Id = input("Enter Employee Id : ")
+
+    if(check_employee(Id) == False):
+        print("Employee does not  exists\nTry Again\n")
+        menu()
+    else:
+        sql = 'delete from empd where id=%s'
+        data = (Id,)
+        c = con.cursor()
+
+        c.execute(sql, data)
+         
+        con.commit()
+        print("Employee Removed")
+        menu()
+
+def menu():
+    print("Welcome to Employee Management Record")
+    print("Press ")
+    print("1 to Add Employee")
+    print("2 to Display Employees")
+    print("3 to Remove Employee ")
+    print("4 to Exit")
+ 
+    ch = int(input("Enter your Choice "))
+    if ch == 1:
+        Add_Employ()
+    elif ch == 2:
+        Display_Employees()
+    elif ch == 3:
+        Remove_Employ()
+    elif ch == 4:
+        exit(0)
+    else:
+        print("Invalid Choice")
+        menu()
+menu()

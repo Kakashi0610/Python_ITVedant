@@ -1,0 +1,9 @@
+To multiple three numbers 
+
+# take inputs
+a = 2
+b = 3
+c = 5
+product = a * b * c
+print("The Product of Number:", product)
+

@@ -1,0 +1,28 @@
+Explain 6 Oops concepts 
+
+a.class : A class is a block of code that holds various functions. Because they
+are located inside a class they are named methods but mean the same
+thing. In addition variables that are stored inside a class are named 
+attributes. The point of a class is to call the class later allowing you 
+to access as many functions or (methods) as you would like with the same
+class name.
+
+b.object : An Object is an instance of a Class. A class is like a blueprint while 
+an instance is a copy of the class with actual values. Python is object-oriented 
+programming language that stresses on objects i.e. it mainly emphasizes functions.
+
+c.encapsulation : By definition, encapsulation describes the idea of bundling data 
+and methods that work on that data within one unit, like a class in Java. This concept
+ is also often used to hide the internal representation, or state of an object from 
+the outside. This is called information hiding.
+
+d.inheritance : Inheritance allows us to define a class that inherits all the methods and properties 
+from another class. Parent class is the class being inherited from, also called base 
+class. Child class is the class that inherits from another class, also called derived class.
+
+e.polimorphism : The word polymorphism means having many forms. In programming, polymorphism means 
+the same function name (but different signatures) being used for different types. The key difference 
+is the data types and number of arguments used in function.
+
+f.data abstraction : Abstraction in python is defined as a process of handling complexity by hiding 
+unnecessary information from the user. This is one of the core concepts of object-oriented programming (OOP) languages.

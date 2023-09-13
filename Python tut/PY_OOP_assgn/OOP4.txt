@@ -1,0 +1,35 @@
+Create a class Student that will accept Student Name and Course Joined. Note the data members have to be strongly private.
+
+Create constructor and destructor
+
+Functions to input and display information of the student
+
+
+class students:
+    count = 0
+    def __init__(self, name,course):
+        self.name = name
+        self.course = course
+        students.count = students.count + 1
+        
+    def entercourse(self):
+        m = input("Enter the course of student : ")
+        self.course(m)
+            
+    def display(self):
+        print (self.name, "got the field of : ", self.course)
+              
+name = input("Enter the name of Student:")
+course = input("Enter the course of Student:")
+s1 = students(name)
+s1 = students(course)
+s1.display()
+print ("")
+
+name = input("Enter the name of Student:")
+course = input("Enter the course of Student:")
+s2 = students(name)
+s2 = students(course)
+s2.display()
+
+s2.displayCount()

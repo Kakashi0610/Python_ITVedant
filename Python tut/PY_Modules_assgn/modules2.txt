@@ -1,0 +1,43 @@
+Explain the following methods in maths module with an example
+
+
+factorial(x)	Returns the factorial of x
+Example :
+n = 5
+print("{}! = {}".format(n, math.factorial(n)))
+
+
+ceil(x)	Returns the smallest integer greater than or equal to x.
+Example :
+p = 10.1
+print(math.ceil(p))
+
+
+floor(x)	Returns the largest integer less than or equal to x
+Example :
+q = 9.99
+print(math.floor(q))
+
+
+pow(x, y)	Returns x raised to the power y
+Example :
+deposit = 10000
+interest_rate = 0.04
+number_years = 5
+final_amount = deposit * math.pow(1 + interest_rate, number_years)
+print("The final amount after five years is", final_amount)
+
+
+sqrt(x)	Returns the square root of x
+Example :
+print(math.sqrt(16))
+
+
+pi	Mathematical constant, the ratio of circumference of a circle to it's diameter (3.14159...)
+example :
+import math
+def circle_area(r):
+    return math.pi*r**2
+radius = 3
+print("Area =", circle_area(radius))
+
